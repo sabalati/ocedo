@@ -7,7 +7,7 @@
 @prefix map: <http://mapping.example.com/> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 
-@prefix ocedo: <https://w3id.org/ocedo/ontology#> .
+@prefix ocedo: <https://w3id.org/ocedo/core#> .
 @prefix ocedr: <https://w3id.org/ocedo/resource/> .
 
 ## Event Mapping (FJE-OK)
@@ -58,7 +58,7 @@ map:event_attribute rdf:type rr:TriplesMap ;
 
 	rr:predicateObjectMap [
 		rr:predicateMap [
-			rr:template "https://w3id.org/ocedo/ontology#{event_attribute_name}" ;
+			rr:template "https://w3id.org/ocedo/core#{event_attribute_name}" ;
 		] ;
 		rr:objectMap [
 			rml:reference "event_attribute_value" ;

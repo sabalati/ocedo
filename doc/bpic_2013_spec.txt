@@ -1,0 +1,46 @@
+*******
+GENERIC - ontology v3.0
+Ontology file location: "files/ocedo.ttl"
+*******
+
+ocedo:Event Class
+- [ocedo:event_type] "event_type" (xsd:string)
+- [ocedo:time] "time:timestamp" (xsd:dateTime)
+- [ocedo:concept_name] "concept:name" (xsd:string)
+- [ocedo:lifecycle_transition] "lifecycle:transition" (xsd:string)
+
+ocedo:Object Class
+- [ocedo:object_type] "object_attribute_name" (xsd:string)
+- [ocedo:object_value] "object_attribute_value" (xsd:string)
+
+ocedo:Case Class (subclass of ocedo:Object)
+
+ocedo:CaseEvent Class
+- [ocedo:case] "caseID" (ocedo:Case)
+- [ocedo:event] "eventID" (ocedo:Event)
+
+ocedo:EventObject Class
+- [ocedo:event] "eventID" (ocedo:Event)
+- [ocedo:object] "objectID" (ocedo:Object)
+
+
+*******
+Specific properties for BPIC 2013
+	==> based on "files/BPI_Challenge_2013_incidents_Exp.pdf"
+	==> about complaint lodged to a company service center (Volvo) and their resolutions
+*******
+
+ocedo:Event Class 
+- [ocedd:is_about_product] "product" (ocedd:Product)
+- [ocedd:is_about_function] "org:role" (ocedd:ProductFunction)
+- [ocedd:impact] "impact" (ocedd:Impact)
+
+- [ocedd:handled_by_team_member] "org:resource" (ocedd:TeamMember)
+	- [ocedd:located_in] "resource country" (ocedd:Location)
+	- [ocedd:part_of] "org:group" (Support Team)
+
+- [ocedd:handled_by_support_team] "org:group" (ocedd:SupportTeam)
+	- [ocedd:part_of] "organization involved" (ocedd:ServiceCenter)
+
+- [ocedd:handled_in_service_center] "organization involved" (ocedd:ServiceCenter)
+	- [located_in] "organization country" (ocedd:Location)
