@@ -1,0 +1,97 @@
+@prefix ocedo: <https://w3id.org/oced/core#> .
+
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+# *** OCED Metamodel *** 
+
+# Event representation in OCED
+ocedo:Event a owl:Class ;
+    rdfs:label "Event" ;
+    rdfs:comment "representation of the event class/concept" .
+
+ocedo:time a owl:DatatypeProperty ;
+    rdfs:label "time" ;
+    rdfs:comment "ocedo:time relates event and timestamp" ;
+    rdfs:domain ocedo:Event ;
+    rdfs:range xsd:dateTime .
+
+ocedo:event_type a owl:DatatypeProperty ;
+    rdfs:label "event_type" ;
+    rdfs:domain ocedo:Event ;
+    rdfs:range xsd:string ;
+    rdfs:comment "Event_type shows type of an event" .
+
+ocedo:concept_name a owl:DatatypeProperty ;
+    rdfs:label "concept_name" ;
+    rdfs:domain ocedo:Event ;
+    rdfs:range xsd:string ;
+    rdfs:comment "concept_name stores event concept name" .
+
+ocedo:lifecycle_transition a owl:DatatypeProperty ;
+    rdfs:label "lifecycle_transition" ;
+    rdfs:domain ocedo:Event ;
+    rdfs:range xsd:string ;
+    rdfs:comment "lifecycle_transition stores information about event's lifecycle_transition" .
+
+# Object representation in OCED
+ocedo:Object a owl:Class ;
+    rdfs:label "Object" ;
+    rdfs:comment "representation of the object class/concept" .
+
+ocedo:object_type a owl:DatatypeProperty ;
+    rdfs:label "object_type" ;
+    rdfs:domain ocedo:Object ;
+    rdfs:range xsd:string ;
+    rdfs:comment "Object_type shows type of an object" .
+
+ocedo:object_value a owl:DatatypeProperty ;
+    rdfs:label "object_value" ;
+    rdfs:domain ocedo:Object ;
+    rdfs:range xsd:string ;
+    rdfs:comment "object_value stores information about object names" .
+
+## Case as a sub-class of Object
+ocedo:Case rdf:type owl:Class ;
+	rdfs:subClassOf ocedo:Object ;
+    rdfs:label "Case" ;
+    rdfs:comment "a subclass of Object representing a Case that links several Events" .
+
+# CaseEvent
+ocedo:CaseEvent a owl:Class ;
+	rdfs:label "CaseEvent" ;
+	rdfs:comment "representation of the relation between Case and Event" .
+
+ocedo:ce_case a owl:ObjectProperty ;
+    rdfs:label "CaseEvent_case" ;
+    rdfs:domain ocedo:CaseEvent ;
+    rdfs:range ocedo:Case ;
+    rdfs:comment "relation between CaseEvent and relevant Case" .
+
+ocedo:ce_event a owl:ObjectProperty ;
+    rdfs:label "CaseEvent_event" ;
+    rdfs:domain ocedo:CaseEvent ;
+    rdfs:range ocedo:Event ;
+    rdfs:comment "relation between CaseEvent and relevant Event" .
+
+# EventObject
+
+ocedo:EventObject a owl:Class ;
+    rdfs:label "EventObject" ;
+    rdfs:comment "representation of the relation between Event and Object" .
+
+ocedo:eo_event a owl:ObjectProperty ;
+    rdfs:label "EventObject_event" ;
+    rdfs:domain ocedo:EventObject ;
+    rdfs:range ocedo:Event ;
+    rdfs:comment "relation between EventObject and relevant Event" .
+
+ocedo:eo_object a owl:ObjectProperty ;
+    rdfs:label "EventObject_object" ;
+    rdfs:domain ocedo:EventObject ;
+    rdfs:range ocedo:Event ;
+    rdfs:comment "relation between EventObject and relevant Object" .
+
+## end of ontology
