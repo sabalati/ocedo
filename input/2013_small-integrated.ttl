@@ -1,18 +1,17 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix ocedd: <https://w3id.org/ocedo/domain#> .
 @prefix ocedo: <https://w3id.org/ocedo/core#> .
 @prefix ocedr: <https://w3id.org/ocedo/resource/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-
-ocedo:ObjectAttribute a owl:Class ;
-    rdfs:label "ObjectAttribute" ;
-    rdfs:comment "representation of the object attribute class/concept" .
 
 ocedo:classifier a owl:DatatypeProperty ;
     rdfs:label "classifier" ;
     rdfs:comment "EventObject classifier" ;
-    rdfs:domain ocedo:attributes .
+    rdfs:domain ocedo:EventObject ;
+    rdfs:range xsd:string .
 
 ocedo:eo_event a owl:ObjectProperty ;
     rdfs:label "EventObject_event" ;
@@ -24,23 +23,25 @@ ocedo:eo_object a owl:ObjectProperty ;
     rdfs:label "EventObject_object" ;
     rdfs:comment "relation between EventObject and relevant Object" ;
     rdfs:domain ocedo:EventObject ;
-    rdfs:range ocedo:Event .
+    rdfs:range ocedo:Object .
 
 ocedo:event_attribute a owl:ObjectProperty ;
     rdfs:label "event_attribute" ;
     rdfs:comment "link between Event and EventAttribute" ;
-    rdfs:domain ocedo:Event,
-        ocedo:EventAttribute .
+    rdfs:domain ocedo:Event ;
+    rdfs:range ocedo:EventAttribute .
 
 ocedo:event_attribute_name a owl:DatatypeProperty ;
     rdfs:label "event_attribute_name" ;
     rdfs:comment "Stores information about event attribute name" ;
-    rdfs:domain ocedo:attributes .
+    rdfs:domain ocedo:EventAttribute ;
+    rdfs:range xsd:string .
 
 ocedo:event_attribute_value a owl:DatatypeProperty ;
     rdfs:label "eventt_attribute_value" ;
     rdfs:comment "Stores information about event attribute values" ;
-    rdfs:domain ocedo:attributes .
+    rdfs:domain ocedo:EventAttribute ;
+    rdfs:range xsd:string .
 
 ocedo:event_type a owl:DatatypeProperty ;
     rdfs:label "event_type" ;
@@ -48,21 +49,35 @@ ocedo:event_type a owl:DatatypeProperty ;
     rdfs:domain ocedo:Event ;
     rdfs:range xsd:string .
 
+ocedo:from a owl:ObjectProperty ;
+    rdfs:label "from" ;
+    rdfs:comment "source Object" ;
+    rdfs:domain ocedo:ObjectRelation ;
+    rdfs:range ocedo:Object .
+
 ocedo:object_attribute a owl:ObjectProperty ;
     rdfs:label "event_attribute" ;
     rdfs:comment "link between Event and EventAttribute" ;
-    rdfs:domain ocedo:Attribute,
-        ocedo:Object .
+    rdfs:domain ocedo:Object ;
+    rdfs:range ocedo:ObjectAttribute .
 
 ocedo:object_attribute_name a owl:DatatypeProperty ;
     rdfs:label "event_attribute_name" ;
     rdfs:comment "Stores information about event attribute name" ;
-    rdfs:domain ocedo:attributes .
+    rdfs:domain ocedo:ObjectAttribute ;
+    rdfs:range xsd:string .
 
 ocedo:object_attribute_value a owl:DatatypeProperty ;
     rdfs:label "eventt_attribute_value" ;
     rdfs:comment "Stores information about event attribute values" ;
-    rdfs:domain ocedo:attributes .
+    rdfs:domain ocedo:ObjectAttribute ;
+    rdfs:range xsd:string .
+
+ocedo:object_relation_type a owl:DatatypeProperty ;
+    rdfs:label "object_relation_type" ;
+    rdfs:comment "shows type of an ObjectRelation" ;
+    rdfs:domain ocedo:ObjectRelation ;
+    rdfs:range xsd:string .
 
 ocedo:object_type a owl:DatatypeProperty ;
     rdfs:label "object_type" ;
@@ -75,6 +90,12 @@ ocedo:time a owl:DatatypeProperty ;
     rdfs:comment "ocedo:time relates event and timestamp" ;
     rdfs:domain ocedo:Event ;
     rdfs:range xsd:dateTime .
+
+ocedo:to a owl:ObjectProperty ;
+    rdfs:label "to" ;
+    rdfs:comment "target Object" ;
+    rdfs:domain ocedo:ObjectRelation ;
+    rdfs:range ocedo:Object .
 
 ocedr:event_object-e_0d4b2fa64fe11ce211cc68923699a26d3afa9d48-o_2fcac6a4e80c374451c77954fb4f150ad177d359 a ocedo:EventObject ;
     ocedo:eo_event ocedr:event-e_0d4b2fa64fe11ce211cc68923699a26d3afa9d48 ;
@@ -2926,6 +2947,612 @@ ocedr:event_object-e_fde67e3266dcc86fd1c3220908d4394af827e866-o_f8865985faf3e52d
     ocedo:eo_object ocedr:object-o_f8865985faf3e52d8b8b173c78d7a1fa75a883c6 ;
     ocedo:qualifier "event_object" .
 
+ocedr:or-o_2fcac6a4e80c374451c77954fb4f150ad177d359-o_0dca74e281d87358a8133dc3a4f4cfafd3b275ee a ocedo:ObjectRelation ;
+    ocedo:from ocedr:object-o_2fcac6a4e80c374451c77954fb4f150ad177d359 ;
+    ocedo:object_relation_type "case_object" ;
+    ocedo:to ocedr:event-o_0dca74e281d87358a8133dc3a4f4cfafd3b275ee .
+
+ocedr:or-o_2fcac6a4e80c374451c77954fb4f150ad177d359-o_102721de23fa87920ad386581c337899254ab2d7 a ocedo:ObjectRelation ;
+    ocedo:from ocedr:object-o_2fcac6a4e80c374451c77954fb4f150ad177d359 ;
+    ocedo:object_relation_type "case_object" ;
+    ocedo:to ocedr:event-o_102721de23fa87920ad386581c337899254ab2d7 .
+
+ocedr:or-o_2fcac6a4e80c374451c77954fb4f150ad177d359-o_13290d11a287f354a40521df2bab9bef7364f74a a ocedo:ObjectRelation ;
+    ocedo:from ocedr:object-o_2fcac6a4e80c374451c77954fb4f150ad177d359 ;
+    ocedo:object_relation_type "case_object" ;
+    ocedo:to ocedr:event-o_13290d11a287f354a40521df2bab9bef7364f74a .
+
+ocedr:or-o_2fcac6a4e80c374451c77954fb4f150ad177d359-o_13bce9181dfb67a504e135311e226ea81940d934 a ocedo:ObjectRelation ;
+    ocedo:from ocedr:object-o_2fcac6a4e80c374451c77954fb4f150ad177d359 ;
+    ocedo:object_relation_type "case_object" ;
+    ocedo:to ocedr:event-o_13bce9181dfb67a504e135311e226ea81940d934 .
+
+ocedr:or-o_2fcac6a4e80c374451c77954fb4f150ad177d359-o_174ebec95af458bb645f08ba5722137886e62236 a ocedo:ObjectRelation ;
+    ocedo:from ocedr:object-o_2fcac6a4e80c374451c77954fb4f150ad177d359 ;
+    ocedo:object_relation_type "case_object" ;
+    ocedo:to ocedr:event-o_174ebec95af458bb645f08ba5722137886e62236 .
+
+ocedr:or-o_2fcac6a4e80c374451c77954fb4f150ad177d359-o_207b3e93258ad17f9dd5bfd20abcbe69e421bbbe a ocedo:ObjectRelation ;
+    ocedo:from ocedr:object-o_2fcac6a4e80c374451c77954fb4f150ad177d359 ;
+    ocedo:object_relation_type "case_object" ;
+    ocedo:to ocedr:event-o_207b3e93258ad17f9dd5bfd20abcbe69e421bbbe .
+
+ocedr:or-o_2fcac6a4e80c374451c77954fb4f150ad177d359-o_294df498e3a31fe317d6be0f6a3b4558f6c11254 a ocedo:ObjectRelation ;
+    ocedo:from ocedr:object-o_2fcac6a4e80c374451c77954fb4f150ad177d359 ;
+    ocedo:object_relation_type "case_object" ;
+    ocedo:to ocedr:event-o_294df498e3a31fe317d6be0f6a3b4558f6c11254 .
+
+ocedr:or-o_2fcac6a4e80c374451c77954fb4f150ad177d359-o_3286a7f93005b928b92bc59cdea9adebf816fd81 a ocedo:ObjectRelation ;
+    ocedo:from ocedr:object-o_2fcac6a4e80c374451c77954fb4f150ad177d359 ;
+    ocedo:object_relation_type "case_object" ;
+    ocedo:to ocedr:event-o_3286a7f93005b928b92bc59cdea9adebf816fd81 .
+
+ocedr:or-o_2fcac6a4e80c374451c77954fb4f150ad177d359-o_32c20d540852dd822125c62f38c933c1156ea511 a ocedo:ObjectRelation ;
+    ocedo:from ocedr:object-o_2fcac6a4e80c374451c77954fb4f150ad177d359 ;
+    ocedo:object_relation_type "case_object" ;
+    ocedo:to ocedr:event-o_32c20d540852dd822125c62f38c933c1156ea511 .
+
+ocedr:or-o_2fcac6a4e80c374451c77954fb4f150ad177d359-o_375ad3a3e3d3a740c6970a8174fd04cc3030bd21 a ocedo:ObjectRelation ;
+    ocedo:from ocedr:object-o_2fcac6a4e80c374451c77954fb4f150ad177d359 ;
+    ocedo:object_relation_type "case_object" ;
+    ocedo:to ocedr:event-o_375ad3a3e3d3a740c6970a8174fd04cc3030bd21 .
+
+ocedr:or-o_2fcac6a4e80c374451c77954fb4f150ad177d359-o_380b6dce44d19ee535d0ff29b7e2de0c61c8434f a ocedo:ObjectRelation ;
+    ocedo:from ocedr:object-o_2fcac6a4e80c374451c77954fb4f150ad177d359 ;
+    ocedo:object_relation_type "case_object" ;
+    ocedo:to ocedr:event-o_380b6dce44d19ee535d0ff29b7e2de0c61c8434f .
+
+ocedr:or-o_2fcac6a4e80c374451c77954fb4f150ad177d359-o_4015dcfa08152771adba01bc73e16ca585cd8476 a ocedo:ObjectRelation ;
+    ocedo:from ocedr:object-o_2fcac6a4e80c374451c77954fb4f150ad177d359 ;
+    ocedo:object_relation_type "case_object" ;
+    ocedo:to ocedr:event-o_4015dcfa08152771adba01bc73e16ca585cd8476 .
+
+ocedr:or-o_2fcac6a4e80c374451c77954fb4f150ad177d359-o_50989e29a0d26c59b76c8e228e208a8ba7eb5925 a ocedo:ObjectRelation ;
+    ocedo:from ocedr:object-o_2fcac6a4e80c374451c77954fb4f150ad177d359 ;
+    ocedo:object_relation_type "case_object" ;
+    ocedo:to ocedr:event-o_50989e29a0d26c59b76c8e228e208a8ba7eb5925 .
+
+ocedr:or-o_2fcac6a4e80c374451c77954fb4f150ad177d359-o_57837fb633bdac6bdb5828b9f799930d2f8c84f8 a ocedo:ObjectRelation ;
+    ocedo:from ocedr:object-o_2fcac6a4e80c374451c77954fb4f150ad177d359 ;
+    ocedo:object_relation_type "case_object" ;
+    ocedo:to ocedr:event-o_57837fb633bdac6bdb5828b9f799930d2f8c84f8 .
+
+ocedr:or-o_2fcac6a4e80c374451c77954fb4f150ad177d359-o_681db330cb3a69da41aca9e2fcc9e49b6a4893e0 a ocedo:ObjectRelation ;
+    ocedo:from ocedr:object-o_2fcac6a4e80c374451c77954fb4f150ad177d359 ;
+    ocedo:object_relation_type "case_object" ;
+    ocedo:to ocedr:event-o_681db330cb3a69da41aca9e2fcc9e49b6a4893e0 .
+
+ocedr:or-o_2fcac6a4e80c374451c77954fb4f150ad177d359-o_6ae4126a969923c6128f111e98e10535a61d34fc a ocedo:ObjectRelation ;
+    ocedo:from ocedr:object-o_2fcac6a4e80c374451c77954fb4f150ad177d359 ;
+    ocedo:object_relation_type "case_object" ;
+    ocedo:to ocedr:event-o_6ae4126a969923c6128f111e98e10535a61d34fc .
+
+ocedr:or-o_2fcac6a4e80c374451c77954fb4f150ad177d359-o_6e34280e1ff2418c818bf65a4bce83b83750d11d a ocedo:ObjectRelation ;
+    ocedo:from ocedr:object-o_2fcac6a4e80c374451c77954fb4f150ad177d359 ;
+    ocedo:object_relation_type "case_object" ;
+    ocedo:to ocedr:event-o_6e34280e1ff2418c818bf65a4bce83b83750d11d .
+
+ocedr:or-o_2fcac6a4e80c374451c77954fb4f150ad177d359-o_72aed004c5e18e8fa8a548b060f7ccc79d58a3f4 a ocedo:ObjectRelation ;
+    ocedo:from ocedr:object-o_2fcac6a4e80c374451c77954fb4f150ad177d359 ;
+    ocedo:object_relation_type "case_object" ;
+    ocedo:to ocedr:event-o_72aed004c5e18e8fa8a548b060f7ccc79d58a3f4 .
+
+ocedr:or-o_2fcac6a4e80c374451c77954fb4f150ad177d359-o_7e62c44d2a8563cff0468bbb886ba10f1137b025 a ocedo:ObjectRelation ;
+    ocedo:from ocedr:object-o_2fcac6a4e80c374451c77954fb4f150ad177d359 ;
+    ocedo:object_relation_type "case_object" ;
+    ocedo:to ocedr:event-o_7e62c44d2a8563cff0468bbb886ba10f1137b025 .
+
+ocedr:or-o_2fcac6a4e80c374451c77954fb4f150ad177d359-o_80d659b9d0fcb2235486305f3dc62cd0c47d2a0e a ocedo:ObjectRelation ;
+    ocedo:from ocedr:object-o_2fcac6a4e80c374451c77954fb4f150ad177d359 ;
+    ocedo:object_relation_type "case_object" ;
+    ocedo:to ocedr:event-o_80d659b9d0fcb2235486305f3dc62cd0c47d2a0e .
+
+ocedr:or-o_2fcac6a4e80c374451c77954fb4f150ad177d359-o_8a134d5b764e8cac87238db1f4517ecd7e6a4249 a ocedo:ObjectRelation ;
+    ocedo:from ocedr:object-o_2fcac6a4e80c374451c77954fb4f150ad177d359 ;
+    ocedo:object_relation_type "case_object" ;
+    ocedo:to ocedr:event-o_8a134d5b764e8cac87238db1f4517ecd7e6a4249 .
+
+ocedr:or-o_2fcac6a4e80c374451c77954fb4f150ad177d359-o_8b2cbc03e38a6cf628353844d708cd56f5ce8625 a ocedo:ObjectRelation ;
+    ocedo:from ocedr:object-o_2fcac6a4e80c374451c77954fb4f150ad177d359 ;
+    ocedo:object_relation_type "case_object" ;
+    ocedo:to ocedr:event-o_8b2cbc03e38a6cf628353844d708cd56f5ce8625 .
+
+ocedr:or-o_2fcac6a4e80c374451c77954fb4f150ad177d359-o_907a9fca78f318ac2ba7c33dbb4341045c69f3c2 a ocedo:ObjectRelation ;
+    ocedo:from ocedr:object-o_2fcac6a4e80c374451c77954fb4f150ad177d359 ;
+    ocedo:object_relation_type "case_object" ;
+    ocedo:to ocedr:event-o_907a9fca78f318ac2ba7c33dbb4341045c69f3c2 .
+
+ocedr:or-o_2fcac6a4e80c374451c77954fb4f150ad177d359-o_98e770e6c9781521962a944ebe01e193212f61fc a ocedo:ObjectRelation ;
+    ocedo:from ocedr:object-o_2fcac6a4e80c374451c77954fb4f150ad177d359 ;
+    ocedo:object_relation_type "case_object" ;
+    ocedo:to ocedr:event-o_98e770e6c9781521962a944ebe01e193212f61fc .
+
+ocedr:or-o_2fcac6a4e80c374451c77954fb4f150ad177d359-o_a1f4f17c83d867cc02fb14d3ea8eb998da5df893 a ocedo:ObjectRelation ;
+    ocedo:from ocedr:object-o_2fcac6a4e80c374451c77954fb4f150ad177d359 ;
+    ocedo:object_relation_type "case_object" ;
+    ocedo:to ocedr:event-o_a1f4f17c83d867cc02fb14d3ea8eb998da5df893 .
+
+ocedr:or-o_2fcac6a4e80c374451c77954fb4f150ad177d359-o_a8829395476536b5faedd5a43bbea5854c81d949 a ocedo:ObjectRelation ;
+    ocedo:from ocedr:object-o_2fcac6a4e80c374451c77954fb4f150ad177d359 ;
+    ocedo:object_relation_type "case_object" ;
+    ocedo:to ocedr:event-o_a8829395476536b5faedd5a43bbea5854c81d949 .
+
+ocedr:or-o_2fcac6a4e80c374451c77954fb4f150ad177d359-o_ab7238b0f1c328cbd9f25cebe11d50cb7db53fe1 a ocedo:ObjectRelation ;
+    ocedo:from ocedr:object-o_2fcac6a4e80c374451c77954fb4f150ad177d359 ;
+    ocedo:object_relation_type "case_object" ;
+    ocedo:to ocedr:event-o_ab7238b0f1c328cbd9f25cebe11d50cb7db53fe1 .
+
+ocedr:or-o_2fcac6a4e80c374451c77954fb4f150ad177d359-o_ba1c868c77440442560645cbce09ddd40784a23f a ocedo:ObjectRelation ;
+    ocedo:from ocedr:object-o_2fcac6a4e80c374451c77954fb4f150ad177d359 ;
+    ocedo:object_relation_type "case_object" ;
+    ocedo:to ocedr:event-o_ba1c868c77440442560645cbce09ddd40784a23f .
+
+ocedr:or-o_2fcac6a4e80c374451c77954fb4f150ad177d359-o_bd4a4f212b33c7c99da76f0a5f1e2db634756a6c a ocedo:ObjectRelation ;
+    ocedo:from ocedr:object-o_2fcac6a4e80c374451c77954fb4f150ad177d359 ;
+    ocedo:object_relation_type "case_object" ;
+    ocedo:to ocedr:event-o_bd4a4f212b33c7c99da76f0a5f1e2db634756a6c .
+
+ocedr:or-o_2fcac6a4e80c374451c77954fb4f150ad177d359-o_c91b5b936dd24a83d8ff505130af76398b6ea4ff a ocedo:ObjectRelation ;
+    ocedo:from ocedr:object-o_2fcac6a4e80c374451c77954fb4f150ad177d359 ;
+    ocedo:object_relation_type "case_object" ;
+    ocedo:to ocedr:event-o_c91b5b936dd24a83d8ff505130af76398b6ea4ff .
+
+ocedr:or-o_2fcac6a4e80c374451c77954fb4f150ad177d359-o_d743f5963efdb5afb2cbbfeeaaabc12740e693e6 a ocedo:ObjectRelation ;
+    ocedo:from ocedr:object-o_2fcac6a4e80c374451c77954fb4f150ad177d359 ;
+    ocedo:object_relation_type "case_object" ;
+    ocedo:to ocedr:event-o_d743f5963efdb5afb2cbbfeeaaabc12740e693e6 .
+
+ocedr:or-o_2fcac6a4e80c374451c77954fb4f150ad177d359-o_d9f09799ce865d63dc41bf7ddd9df55dd193db16 a ocedo:ObjectRelation ;
+    ocedo:from ocedr:object-o_2fcac6a4e80c374451c77954fb4f150ad177d359 ;
+    ocedo:object_relation_type "case_object" ;
+    ocedo:to ocedr:event-o_d9f09799ce865d63dc41bf7ddd9df55dd193db16 .
+
+ocedr:or-o_2fcac6a4e80c374451c77954fb4f150ad177d359-o_dbfe157b33eb65c49e435fef51720efe5cda0f36 a ocedo:ObjectRelation ;
+    ocedo:from ocedr:object-o_2fcac6a4e80c374451c77954fb4f150ad177d359 ;
+    ocedo:object_relation_type "case_object" ;
+    ocedo:to ocedr:event-o_dbfe157b33eb65c49e435fef51720efe5cda0f36 .
+
+ocedr:or-o_2fcac6a4e80c374451c77954fb4f150ad177d359-o_e66e59e346e9806349558fc1ca5f5299ffa8ca99 a ocedo:ObjectRelation ;
+    ocedo:from ocedr:object-o_2fcac6a4e80c374451c77954fb4f150ad177d359 ;
+    ocedo:object_relation_type "case_object" ;
+    ocedo:to ocedr:event-o_e66e59e346e9806349558fc1ca5f5299ffa8ca99 .
+
+ocedr:or-o_2fcac6a4e80c374451c77954fb4f150ad177d359-o_e7990a2dc18e6091ae7756ae2ce8f4bf4dc4f428 a ocedo:ObjectRelation ;
+    ocedo:from ocedr:object-o_2fcac6a4e80c374451c77954fb4f150ad177d359 ;
+    ocedo:object_relation_type "case_object" ;
+    ocedo:to ocedr:event-o_e7990a2dc18e6091ae7756ae2ce8f4bf4dc4f428 .
+
+ocedr:or-o_2fcac6a4e80c374451c77954fb4f150ad177d359-o_e7feeabd12ab988687f553d4b6535096340f9115 a ocedo:ObjectRelation ;
+    ocedo:from ocedr:object-o_2fcac6a4e80c374451c77954fb4f150ad177d359 ;
+    ocedo:object_relation_type "case_object" ;
+    ocedo:to ocedr:event-o_e7feeabd12ab988687f553d4b6535096340f9115 .
+
+ocedr:or-o_2fcac6a4e80c374451c77954fb4f150ad177d359-o_ed3ff4f205907a14333ac903d2f715f51c924c6d a ocedo:ObjectRelation ;
+    ocedo:from ocedr:object-o_2fcac6a4e80c374451c77954fb4f150ad177d359 ;
+    ocedo:object_relation_type "case_object" ;
+    ocedo:to ocedr:event-o_ed3ff4f205907a14333ac903d2f715f51c924c6d .
+
+ocedr:or-o_2fcac6a4e80c374451c77954fb4f150ad177d359-o_ef20db483a4a2621181cac2fb2d74f596029e11e a ocedo:ObjectRelation ;
+    ocedo:from ocedr:object-o_2fcac6a4e80c374451c77954fb4f150ad177d359 ;
+    ocedo:object_relation_type "case_object" ;
+    ocedo:to ocedr:event-o_ef20db483a4a2621181cac2fb2d74f596029e11e .
+
+ocedr:or-o_2fcac6a4e80c374451c77954fb4f150ad177d359-o_efe7614abafcb59e016086b001a9c88252c55b13 a ocedo:ObjectRelation ;
+    ocedo:from ocedr:object-o_2fcac6a4e80c374451c77954fb4f150ad177d359 ;
+    ocedo:object_relation_type "case_object" ;
+    ocedo:to ocedr:event-o_efe7614abafcb59e016086b001a9c88252c55b13 .
+
+ocedr:or-o_2fcac6a4e80c374451c77954fb4f150ad177d359-o_fe944b3ac9b75da7b15c7e8eb57c2200d4e391e9 a ocedo:ObjectRelation ;
+    ocedo:from ocedr:object-o_2fcac6a4e80c374451c77954fb4f150ad177d359 ;
+    ocedo:object_relation_type "case_object" ;
+    ocedo:to ocedr:event-o_fe944b3ac9b75da7b15c7e8eb57c2200d4e391e9 .
+
+ocedr:or-o_d47ba2f9750d681e28684ac48194812c9e13ece9-o_01d6e05e41d9943fb2b4df1dc5e3fc4d72ce3885 a ocedo:ObjectRelation ;
+    ocedo:from ocedr:object-o_d47ba2f9750d681e28684ac48194812c9e13ece9 ;
+    ocedo:object_relation_type "case_object" ;
+    ocedo:to ocedr:event-o_01d6e05e41d9943fb2b4df1dc5e3fc4d72ce3885 .
+
+ocedr:or-o_d47ba2f9750d681e28684ac48194812c9e13ece9-o_0274c7a9b703206aca6387ecdabba6fe0e0361e8 a ocedo:ObjectRelation ;
+    ocedo:from ocedr:object-o_d47ba2f9750d681e28684ac48194812c9e13ece9 ;
+    ocedo:object_relation_type "case_object" ;
+    ocedo:to ocedr:event-o_0274c7a9b703206aca6387ecdabba6fe0e0361e8 .
+
+ocedr:or-o_d47ba2f9750d681e28684ac48194812c9e13ece9-o_02e559c756c1cb833f623d374eb1f77368c1bd76 a ocedo:ObjectRelation ;
+    ocedo:from ocedr:object-o_d47ba2f9750d681e28684ac48194812c9e13ece9 ;
+    ocedo:object_relation_type "case_object" ;
+    ocedo:to ocedr:event-o_02e559c756c1cb833f623d374eb1f77368c1bd76 .
+
+ocedr:or-o_d47ba2f9750d681e28684ac48194812c9e13ece9-o_0dca74e281d87358a8133dc3a4f4cfafd3b275ee a ocedo:ObjectRelation ;
+    ocedo:from ocedr:object-o_d47ba2f9750d681e28684ac48194812c9e13ece9 ;
+    ocedo:object_relation_type "case_object" ;
+    ocedo:to ocedr:event-o_0dca74e281d87358a8133dc3a4f4cfafd3b275ee .
+
+ocedr:or-o_d47ba2f9750d681e28684ac48194812c9e13ece9-o_0f9dfc25fdd520b97aaa3e73e95894af27f80a4b a ocedo:ObjectRelation ;
+    ocedo:from ocedr:object-o_d47ba2f9750d681e28684ac48194812c9e13ece9 ;
+    ocedo:object_relation_type "case_object" ;
+    ocedo:to ocedr:event-o_0f9dfc25fdd520b97aaa3e73e95894af27f80a4b .
+
+ocedr:or-o_d47ba2f9750d681e28684ac48194812c9e13ece9-o_10cafa459c77c770a98803a8c86e56d8c2065179 a ocedo:ObjectRelation ;
+    ocedo:from ocedr:object-o_d47ba2f9750d681e28684ac48194812c9e13ece9 ;
+    ocedo:object_relation_type "case_object" ;
+    ocedo:to ocedr:event-o_10cafa459c77c770a98803a8c86e56d8c2065179 .
+
+ocedr:or-o_d47ba2f9750d681e28684ac48194812c9e13ece9-o_10e6a98264eab40d05934cf8538ed5ba50db3389 a ocedo:ObjectRelation ;
+    ocedo:from ocedr:object-o_d47ba2f9750d681e28684ac48194812c9e13ece9 ;
+    ocedo:object_relation_type "case_object" ;
+    ocedo:to ocedr:event-o_10e6a98264eab40d05934cf8538ed5ba50db3389 .
+
+ocedr:or-o_d47ba2f9750d681e28684ac48194812c9e13ece9-o_11a1e3607972b42342ace402b2bfe65eb16bc01f a ocedo:ObjectRelation ;
+    ocedo:from ocedr:object-o_d47ba2f9750d681e28684ac48194812c9e13ece9 ;
+    ocedo:object_relation_type "case_object" ;
+    ocedo:to ocedr:event-o_11a1e3607972b42342ace402b2bfe65eb16bc01f .
+
+ocedr:or-o_d47ba2f9750d681e28684ac48194812c9e13ece9-o_11c8807f823e4cead06221d7f96d33315ef91fcf a ocedo:ObjectRelation ;
+    ocedo:from ocedr:object-o_d47ba2f9750d681e28684ac48194812c9e13ece9 ;
+    ocedo:object_relation_type "case_object" ;
+    ocedo:to ocedr:event-o_11c8807f823e4cead06221d7f96d33315ef91fcf .
+
+ocedr:or-o_d47ba2f9750d681e28684ac48194812c9e13ece9-o_13def08afd45f13ebdef0c5769494070d07ab01b a ocedo:ObjectRelation ;
+    ocedo:from ocedr:object-o_d47ba2f9750d681e28684ac48194812c9e13ece9 ;
+    ocedo:object_relation_type "case_object" ;
+    ocedo:to ocedr:event-o_13def08afd45f13ebdef0c5769494070d07ab01b .
+
+ocedr:or-o_d47ba2f9750d681e28684ac48194812c9e13ece9-o_14b6ad3bf77711afbff2ab55e25d79f0618ec30c a ocedo:ObjectRelation ;
+    ocedo:from ocedr:object-o_d47ba2f9750d681e28684ac48194812c9e13ece9 ;
+    ocedo:object_relation_type "case_object" ;
+    ocedo:to ocedr:event-o_14b6ad3bf77711afbff2ab55e25d79f0618ec30c .
+
+ocedr:or-o_d47ba2f9750d681e28684ac48194812c9e13ece9-o_1a161b5a9a84be8f58509031550e489988121bd9 a ocedo:ObjectRelation ;
+    ocedo:from ocedr:object-o_d47ba2f9750d681e28684ac48194812c9e13ece9 ;
+    ocedo:object_relation_type "case_object" ;
+    ocedo:to ocedr:event-o_1a161b5a9a84be8f58509031550e489988121bd9 .
+
+ocedr:or-o_d47ba2f9750d681e28684ac48194812c9e13ece9-o_207b3e93258ad17f9dd5bfd20abcbe69e421bbbe a ocedo:ObjectRelation ;
+    ocedo:from ocedr:object-o_d47ba2f9750d681e28684ac48194812c9e13ece9 ;
+    ocedo:object_relation_type "case_object" ;
+    ocedo:to ocedr:event-o_207b3e93258ad17f9dd5bfd20abcbe69e421bbbe .
+
+ocedr:or-o_d47ba2f9750d681e28684ac48194812c9e13ece9-o_21de5a708321cc73a31689d19045efb5be002c45 a ocedo:ObjectRelation ;
+    ocedo:from ocedr:object-o_d47ba2f9750d681e28684ac48194812c9e13ece9 ;
+    ocedo:object_relation_type "case_object" ;
+    ocedo:to ocedr:event-o_21de5a708321cc73a31689d19045efb5be002c45 .
+
+ocedr:or-o_d47ba2f9750d681e28684ac48194812c9e13ece9-o_263d8d276820aba8beb7e46ed9e1610e7136c1c5 a ocedo:ObjectRelation ;
+    ocedo:from ocedr:object-o_d47ba2f9750d681e28684ac48194812c9e13ece9 ;
+    ocedo:object_relation_type "case_object" ;
+    ocedo:to ocedr:event-o_263d8d276820aba8beb7e46ed9e1610e7136c1c5 .
+
+ocedr:or-o_d47ba2f9750d681e28684ac48194812c9e13ece9-o_264e83c93e5b7d3b74e0f7525b81c46a40285248 a ocedo:ObjectRelation ;
+    ocedo:from ocedr:object-o_d47ba2f9750d681e28684ac48194812c9e13ece9 ;
+    ocedo:object_relation_type "case_object" ;
+    ocedo:to ocedr:event-o_264e83c93e5b7d3b74e0f7525b81c46a40285248 .
+
+ocedr:or-o_d47ba2f9750d681e28684ac48194812c9e13ece9-o_2c3c1768df30dc6d7e8ec1865f557fcbecd37fd1 a ocedo:ObjectRelation ;
+    ocedo:from ocedr:object-o_d47ba2f9750d681e28684ac48194812c9e13ece9 ;
+    ocedo:object_relation_type "case_object" ;
+    ocedo:to ocedr:event-o_2c3c1768df30dc6d7e8ec1865f557fcbecd37fd1 .
+
+ocedr:or-o_d47ba2f9750d681e28684ac48194812c9e13ece9-o_2f6943f0d57e5b1b735d113bb4b22e127a886ada a ocedo:ObjectRelation ;
+    ocedo:from ocedr:object-o_d47ba2f9750d681e28684ac48194812c9e13ece9 ;
+    ocedo:object_relation_type "case_object" ;
+    ocedo:to ocedr:event-o_2f6943f0d57e5b1b735d113bb4b22e127a886ada .
+
+ocedr:or-o_d47ba2f9750d681e28684ac48194812c9e13ece9-o_32c20d540852dd822125c62f38c933c1156ea511 a ocedo:ObjectRelation ;
+    ocedo:from ocedr:object-o_d47ba2f9750d681e28684ac48194812c9e13ece9 ;
+    ocedo:object_relation_type "case_object" ;
+    ocedo:to ocedr:event-o_32c20d540852dd822125c62f38c933c1156ea511 .
+
+ocedr:or-o_d47ba2f9750d681e28684ac48194812c9e13ece9-o_33e157f83ca3fc46f83581614426cc04e169e744 a ocedo:ObjectRelation ;
+    ocedo:from ocedr:object-o_d47ba2f9750d681e28684ac48194812c9e13ece9 ;
+    ocedo:object_relation_type "case_object" ;
+    ocedo:to ocedr:event-o_33e157f83ca3fc46f83581614426cc04e169e744 .
+
+ocedr:or-o_d47ba2f9750d681e28684ac48194812c9e13ece9-o_3a1de62bedcc9894e60b2cabde11dbd551768b7e a ocedo:ObjectRelation ;
+    ocedo:from ocedr:object-o_d47ba2f9750d681e28684ac48194812c9e13ece9 ;
+    ocedo:object_relation_type "case_object" ;
+    ocedo:to ocedr:event-o_3a1de62bedcc9894e60b2cabde11dbd551768b7e .
+
+ocedr:or-o_d47ba2f9750d681e28684ac48194812c9e13ece9-o_3ba1a3b6a189ef86373af3c5b416a31e8117fe15 a ocedo:ObjectRelation ;
+    ocedo:from ocedr:object-o_d47ba2f9750d681e28684ac48194812c9e13ece9 ;
+    ocedo:object_relation_type "case_object" ;
+    ocedo:to ocedr:event-o_3ba1a3b6a189ef86373af3c5b416a31e8117fe15 .
+
+ocedr:or-o_d47ba2f9750d681e28684ac48194812c9e13ece9-o_41b2b4b5a197f007221fe1b9881cbeab1019699c a ocedo:ObjectRelation ;
+    ocedo:from ocedr:object-o_d47ba2f9750d681e28684ac48194812c9e13ece9 ;
+    ocedo:object_relation_type "case_object" ;
+    ocedo:to ocedr:event-o_41b2b4b5a197f007221fe1b9881cbeab1019699c .
+
+ocedr:or-o_d47ba2f9750d681e28684ac48194812c9e13ece9-o_4b83669d95601c460c7922f43634b776dad362ed a ocedo:ObjectRelation ;
+    ocedo:from ocedr:object-o_d47ba2f9750d681e28684ac48194812c9e13ece9 ;
+    ocedo:object_relation_type "case_object" ;
+    ocedo:to ocedr:event-o_4b83669d95601c460c7922f43634b776dad362ed .
+
+ocedr:or-o_d47ba2f9750d681e28684ac48194812c9e13ece9-o_4b9f1cd34d28f3f05fcdc44fd4f2be9473cdff04 a ocedo:ObjectRelation ;
+    ocedo:from ocedr:object-o_d47ba2f9750d681e28684ac48194812c9e13ece9 ;
+    ocedo:object_relation_type "case_object" ;
+    ocedo:to ocedr:event-o_4b9f1cd34d28f3f05fcdc44fd4f2be9473cdff04 .
+
+ocedr:or-o_d47ba2f9750d681e28684ac48194812c9e13ece9-o_4e59b53da926843ee295237b8385196815b48af4 a ocedo:ObjectRelation ;
+    ocedo:from ocedr:object-o_d47ba2f9750d681e28684ac48194812c9e13ece9 ;
+    ocedo:object_relation_type "case_object" ;
+    ocedo:to ocedr:event-o_4e59b53da926843ee295237b8385196815b48af4 .
+
+ocedr:or-o_d47ba2f9750d681e28684ac48194812c9e13ece9-o_4e5f7a604bed2c128e8d4fb3fbe14471a8c53acd a ocedo:ObjectRelation ;
+    ocedo:from ocedr:object-o_d47ba2f9750d681e28684ac48194812c9e13ece9 ;
+    ocedo:object_relation_type "case_object" ;
+    ocedo:to ocedr:event-o_4e5f7a604bed2c128e8d4fb3fbe14471a8c53acd .
+
+ocedr:or-o_d47ba2f9750d681e28684ac48194812c9e13ece9-o_535c29d6ddb4ff071e283d8bc8085614912e805a a ocedo:ObjectRelation ;
+    ocedo:from ocedr:object-o_d47ba2f9750d681e28684ac48194812c9e13ece9 ;
+    ocedo:object_relation_type "case_object" ;
+    ocedo:to ocedr:event-o_535c29d6ddb4ff071e283d8bc8085614912e805a .
+
+ocedr:or-o_d47ba2f9750d681e28684ac48194812c9e13ece9-o_54f01692dfba7202223572baa49846095467771f a ocedo:ObjectRelation ;
+    ocedo:from ocedr:object-o_d47ba2f9750d681e28684ac48194812c9e13ece9 ;
+    ocedo:object_relation_type "case_object" ;
+    ocedo:to ocedr:event-o_54f01692dfba7202223572baa49846095467771f .
+
+ocedr:or-o_d47ba2f9750d681e28684ac48194812c9e13ece9-o_572da962f0e698959331bb9cf90f876f96fa1208 a ocedo:ObjectRelation ;
+    ocedo:from ocedr:object-o_d47ba2f9750d681e28684ac48194812c9e13ece9 ;
+    ocedo:object_relation_type "case_object" ;
+    ocedo:to ocedr:event-o_572da962f0e698959331bb9cf90f876f96fa1208 .
+
+ocedr:or-o_d47ba2f9750d681e28684ac48194812c9e13ece9-o_593a6d7d6d5c8cf8c62f2407421d6ca231cd6a5a a ocedo:ObjectRelation ;
+    ocedo:from ocedr:object-o_d47ba2f9750d681e28684ac48194812c9e13ece9 ;
+    ocedo:object_relation_type "case_object" ;
+    ocedo:to ocedr:event-o_593a6d7d6d5c8cf8c62f2407421d6ca231cd6a5a .
+
+ocedr:or-o_d47ba2f9750d681e28684ac48194812c9e13ece9-o_5ba4df9832dc1d901b376b5ca9ed17b56ba7b2c9 a ocedo:ObjectRelation ;
+    ocedo:from ocedr:object-o_d47ba2f9750d681e28684ac48194812c9e13ece9 ;
+    ocedo:object_relation_type "case_object" ;
+    ocedo:to ocedr:event-o_5ba4df9832dc1d901b376b5ca9ed17b56ba7b2c9 .
+
+ocedr:or-o_d47ba2f9750d681e28684ac48194812c9e13ece9-o_60cd58e61942d6a6f51ad82ba6c42d6d4d0884b7 a ocedo:ObjectRelation ;
+    ocedo:from ocedr:object-o_d47ba2f9750d681e28684ac48194812c9e13ece9 ;
+    ocedo:object_relation_type "case_object" ;
+    ocedo:to ocedr:event-o_60cd58e61942d6a6f51ad82ba6c42d6d4d0884b7 .
+
+ocedr:or-o_d47ba2f9750d681e28684ac48194812c9e13ece9-o_62986eb1d091549a280a405a62760dcf79d65fcc a ocedo:ObjectRelation ;
+    ocedo:from ocedr:object-o_d47ba2f9750d681e28684ac48194812c9e13ece9 ;
+    ocedo:object_relation_type "case_object" ;
+    ocedo:to ocedr:event-o_62986eb1d091549a280a405a62760dcf79d65fcc .
+
+ocedr:or-o_d47ba2f9750d681e28684ac48194812c9e13ece9-o_6a4dd4983ed83243d54e1e4559d48968ce079730 a ocedo:ObjectRelation ;
+    ocedo:from ocedr:object-o_d47ba2f9750d681e28684ac48194812c9e13ece9 ;
+    ocedo:object_relation_type "case_object" ;
+    ocedo:to ocedr:event-o_6a4dd4983ed83243d54e1e4559d48968ce079730 .
+
+ocedr:or-o_d47ba2f9750d681e28684ac48194812c9e13ece9-o_6e8f855884aae5fd779695a69fa6092974001f7e a ocedo:ObjectRelation ;
+    ocedo:from ocedr:object-o_d47ba2f9750d681e28684ac48194812c9e13ece9 ;
+    ocedo:object_relation_type "case_object" ;
+    ocedo:to ocedr:event-o_6e8f855884aae5fd779695a69fa6092974001f7e .
+
+ocedr:or-o_d47ba2f9750d681e28684ac48194812c9e13ece9-o_732a6585decbdc2ff25b32dd0e621982044b2c7c a ocedo:ObjectRelation ;
+    ocedo:from ocedr:object-o_d47ba2f9750d681e28684ac48194812c9e13ece9 ;
+    ocedo:object_relation_type "case_object" ;
+    ocedo:to ocedr:event-o_732a6585decbdc2ff25b32dd0e621982044b2c7c .
+
+ocedr:or-o_d47ba2f9750d681e28684ac48194812c9e13ece9-o_76cf7262aa1d169d8908792eebe77e0d9ad2093f a ocedo:ObjectRelation ;
+    ocedo:from ocedr:object-o_d47ba2f9750d681e28684ac48194812c9e13ece9 ;
+    ocedo:object_relation_type "case_object" ;
+    ocedo:to ocedr:event-o_76cf7262aa1d169d8908792eebe77e0d9ad2093f .
+
+ocedr:or-o_d47ba2f9750d681e28684ac48194812c9e13ece9-o_7a4dc15206f5f03fd33d2f1709f77ec069bc6161 a ocedo:ObjectRelation ;
+    ocedo:from ocedr:object-o_d47ba2f9750d681e28684ac48194812c9e13ece9 ;
+    ocedo:object_relation_type "case_object" ;
+    ocedo:to ocedr:event-o_7a4dc15206f5f03fd33d2f1709f77ec069bc6161 .
+
+ocedr:or-o_d47ba2f9750d681e28684ac48194812c9e13ece9-o_9059f246cadab70687dcd6cb5f94e33db7cd052c a ocedo:ObjectRelation ;
+    ocedo:from ocedr:object-o_d47ba2f9750d681e28684ac48194812c9e13ece9 ;
+    ocedo:object_relation_type "case_object" ;
+    ocedo:to ocedr:event-o_9059f246cadab70687dcd6cb5f94e33db7cd052c .
+
+ocedr:or-o_d47ba2f9750d681e28684ac48194812c9e13ece9-o_907a9fca78f318ac2ba7c33dbb4341045c69f3c2 a ocedo:ObjectRelation ;
+    ocedo:from ocedr:object-o_d47ba2f9750d681e28684ac48194812c9e13ece9 ;
+    ocedo:object_relation_type "case_object" ;
+    ocedo:to ocedr:event-o_907a9fca78f318ac2ba7c33dbb4341045c69f3c2 .
+
+ocedr:or-o_d47ba2f9750d681e28684ac48194812c9e13ece9-o_97f3b20bed405d8f5c9d3d1008dd6a32176131b9 a ocedo:ObjectRelation ;
+    ocedo:from ocedr:object-o_d47ba2f9750d681e28684ac48194812c9e13ece9 ;
+    ocedo:object_relation_type "case_object" ;
+    ocedo:to ocedr:event-o_97f3b20bed405d8f5c9d3d1008dd6a32176131b9 .
+
+ocedr:or-o_d47ba2f9750d681e28684ac48194812c9e13ece9-o_9b821c6893ceed31c259e2fe46e3233febb3dbf8 a ocedo:ObjectRelation ;
+    ocedo:from ocedr:object-o_d47ba2f9750d681e28684ac48194812c9e13ece9 ;
+    ocedo:object_relation_type "case_object" ;
+    ocedo:to ocedr:event-o_9b821c6893ceed31c259e2fe46e3233febb3dbf8 .
+
+ocedr:or-o_d47ba2f9750d681e28684ac48194812c9e13ece9-o_a2969b57b447b0276ab89cfd2788eeac8f8dcb3e a ocedo:ObjectRelation ;
+    ocedo:from ocedr:object-o_d47ba2f9750d681e28684ac48194812c9e13ece9 ;
+    ocedo:object_relation_type "case_object" ;
+    ocedo:to ocedr:event-o_a2969b57b447b0276ab89cfd2788eeac8f8dcb3e .
+
+ocedr:or-o_d47ba2f9750d681e28684ac48194812c9e13ece9-o_a2d795b558a365c761bbdb3a3bb779f684fb5335 a ocedo:ObjectRelation ;
+    ocedo:from ocedr:object-o_d47ba2f9750d681e28684ac48194812c9e13ece9 ;
+    ocedo:object_relation_type "case_object" ;
+    ocedo:to ocedr:event-o_a2d795b558a365c761bbdb3a3bb779f684fb5335 .
+
+ocedr:or-o_d47ba2f9750d681e28684ac48194812c9e13ece9-o_a5b0b853e88b795dfca4255adfd841e13525e432 a ocedo:ObjectRelation ;
+    ocedo:from ocedr:object-o_d47ba2f9750d681e28684ac48194812c9e13ece9 ;
+    ocedo:object_relation_type "case_object" ;
+    ocedo:to ocedr:event-o_a5b0b853e88b795dfca4255adfd841e13525e432 .
+
+ocedr:or-o_d47ba2f9750d681e28684ac48194812c9e13ece9-o_a8d2c829001ffa8d060eb03b03e9c14a1baff9f4 a ocedo:ObjectRelation ;
+    ocedo:from ocedr:object-o_d47ba2f9750d681e28684ac48194812c9e13ece9 ;
+    ocedo:object_relation_type "case_object" ;
+    ocedo:to ocedr:event-o_a8d2c829001ffa8d060eb03b03e9c14a1baff9f4 .
+
+ocedr:or-o_d47ba2f9750d681e28684ac48194812c9e13ece9-o_aba3ce8fba7fd97297bc546e1d0ae4e64b1e2df7 a ocedo:ObjectRelation ;
+    ocedo:from ocedr:object-o_d47ba2f9750d681e28684ac48194812c9e13ece9 ;
+    ocedo:object_relation_type "case_object" ;
+    ocedo:to ocedr:event-o_aba3ce8fba7fd97297bc546e1d0ae4e64b1e2df7 .
+
+ocedr:or-o_d47ba2f9750d681e28684ac48194812c9e13ece9-o_ad03a6c2490bda70cea158b3b09841830346294c a ocedo:ObjectRelation ;
+    ocedo:from ocedr:object-o_d47ba2f9750d681e28684ac48194812c9e13ece9 ;
+    ocedo:object_relation_type "case_object" ;
+    ocedo:to ocedr:event-o_ad03a6c2490bda70cea158b3b09841830346294c .
+
+ocedr:or-o_d47ba2f9750d681e28684ac48194812c9e13ece9-o_b897d57ae159025e09203a94613789c3a1c7c9d9 a ocedo:ObjectRelation ;
+    ocedo:from ocedr:object-o_d47ba2f9750d681e28684ac48194812c9e13ece9 ;
+    ocedo:object_relation_type "case_object" ;
+    ocedo:to ocedr:event-o_b897d57ae159025e09203a94613789c3a1c7c9d9 .
+
+ocedr:or-o_d47ba2f9750d681e28684ac48194812c9e13ece9-o_ba1c868c77440442560645cbce09ddd40784a23f a ocedo:ObjectRelation ;
+    ocedo:from ocedr:object-o_d47ba2f9750d681e28684ac48194812c9e13ece9 ;
+    ocedo:object_relation_type "case_object" ;
+    ocedo:to ocedr:event-o_ba1c868c77440442560645cbce09ddd40784a23f .
+
+ocedr:or-o_d47ba2f9750d681e28684ac48194812c9e13ece9-o_bf8452594a7c84f8f8c479e7aa433dd5e5097dea a ocedo:ObjectRelation ;
+    ocedo:from ocedr:object-o_d47ba2f9750d681e28684ac48194812c9e13ece9 ;
+    ocedo:object_relation_type "case_object" ;
+    ocedo:to ocedr:event-o_bf8452594a7c84f8f8c479e7aa433dd5e5097dea .
+
+ocedr:or-o_d47ba2f9750d681e28684ac48194812c9e13ece9-o_c267e741f6f65268c5cb4777d50c868c53885f8e a ocedo:ObjectRelation ;
+    ocedo:from ocedr:object-o_d47ba2f9750d681e28684ac48194812c9e13ece9 ;
+    ocedo:object_relation_type "case_object" ;
+    ocedo:to ocedr:event-o_c267e741f6f65268c5cb4777d50c868c53885f8e .
+
+ocedr:or-o_d47ba2f9750d681e28684ac48194812c9e13ece9-o_c31a24c740e4ffb57fcb4537d38bd67f82c4effd a ocedo:ObjectRelation ;
+    ocedo:from ocedr:object-o_d47ba2f9750d681e28684ac48194812c9e13ece9 ;
+    ocedo:object_relation_type "case_object" ;
+    ocedo:to ocedr:event-o_c31a24c740e4ffb57fcb4537d38bd67f82c4effd .
+
+ocedr:or-o_d47ba2f9750d681e28684ac48194812c9e13ece9-o_c43c773f5c7fbed1b20ec97d539d9d0735f0a34c a ocedo:ObjectRelation ;
+    ocedo:from ocedr:object-o_d47ba2f9750d681e28684ac48194812c9e13ece9 ;
+    ocedo:object_relation_type "case_object" ;
+    ocedo:to ocedr:event-o_c43c773f5c7fbed1b20ec97d539d9d0735f0a34c .
+
+ocedr:or-o_d47ba2f9750d681e28684ac48194812c9e13ece9-o_c84579c2e424b87f97339535288e0b12076ca6eb a ocedo:ObjectRelation ;
+    ocedo:from ocedr:object-o_d47ba2f9750d681e28684ac48194812c9e13ece9 ;
+    ocedo:object_relation_type "case_object" ;
+    ocedo:to ocedr:event-o_c84579c2e424b87f97339535288e0b12076ca6eb .
+
+ocedr:or-o_d47ba2f9750d681e28684ac48194812c9e13ece9-o_c91b5b936dd24a83d8ff505130af76398b6ea4ff a ocedo:ObjectRelation ;
+    ocedo:from ocedr:object-o_d47ba2f9750d681e28684ac48194812c9e13ece9 ;
+    ocedo:object_relation_type "case_object" ;
+    ocedo:to ocedr:event-o_c91b5b936dd24a83d8ff505130af76398b6ea4ff .
+
+ocedr:or-o_d47ba2f9750d681e28684ac48194812c9e13ece9-o_c932687d7dd6e5299acf96e38375918266eb3b40 a ocedo:ObjectRelation ;
+    ocedo:from ocedr:object-o_d47ba2f9750d681e28684ac48194812c9e13ece9 ;
+    ocedo:object_relation_type "case_object" ;
+    ocedo:to ocedr:event-o_c932687d7dd6e5299acf96e38375918266eb3b40 .
+
+ocedr:or-o_d47ba2f9750d681e28684ac48194812c9e13ece9-o_cbc245656ebe0d10201d486b95f8068a5630eb8c a ocedo:ObjectRelation ;
+    ocedo:from ocedr:object-o_d47ba2f9750d681e28684ac48194812c9e13ece9 ;
+    ocedo:object_relation_type "case_object" ;
+    ocedo:to ocedr:event-o_cbc245656ebe0d10201d486b95f8068a5630eb8c .
+
+ocedr:or-o_d47ba2f9750d681e28684ac48194812c9e13ece9-o_cc010a762d338c1cbdd31fe3abaac506d57e62c7 a ocedo:ObjectRelation ;
+    ocedo:from ocedr:object-o_d47ba2f9750d681e28684ac48194812c9e13ece9 ;
+    ocedo:object_relation_type "case_object" ;
+    ocedo:to ocedr:event-o_cc010a762d338c1cbdd31fe3abaac506d57e62c7 .
+
+ocedr:or-o_d47ba2f9750d681e28684ac48194812c9e13ece9-o_cf00e0ad15666684b8f6b11d9034fa0d22d3e408 a ocedo:ObjectRelation ;
+    ocedo:from ocedr:object-o_d47ba2f9750d681e28684ac48194812c9e13ece9 ;
+    ocedo:object_relation_type "case_object" ;
+    ocedo:to ocedr:event-o_cf00e0ad15666684b8f6b11d9034fa0d22d3e408 .
+
+ocedr:or-o_d47ba2f9750d681e28684ac48194812c9e13ece9-o_d0ee445a42dde30c9302b5002c3527cf5bb11f6d a ocedo:ObjectRelation ;
+    ocedo:from ocedr:object-o_d47ba2f9750d681e28684ac48194812c9e13ece9 ;
+    ocedo:object_relation_type "case_object" ;
+    ocedo:to ocedr:event-o_d0ee445a42dde30c9302b5002c3527cf5bb11f6d .
+
+ocedr:or-o_d47ba2f9750d681e28684ac48194812c9e13ece9-o_d224a5870e600747351510165418a996a3f43f0e a ocedo:ObjectRelation ;
+    ocedo:from ocedr:object-o_d47ba2f9750d681e28684ac48194812c9e13ece9 ;
+    ocedo:object_relation_type "case_object" ;
+    ocedo:to ocedr:event-o_d224a5870e600747351510165418a996a3f43f0e .
+
+ocedr:or-o_d47ba2f9750d681e28684ac48194812c9e13ece9-o_d2a4f4516d8c2ae42c0f40500a4cbeb390024f86 a ocedo:ObjectRelation ;
+    ocedo:from ocedr:object-o_d47ba2f9750d681e28684ac48194812c9e13ece9 ;
+    ocedo:object_relation_type "case_object" ;
+    ocedo:to ocedr:event-o_d2a4f4516d8c2ae42c0f40500a4cbeb390024f86 .
+
+ocedr:or-o_d47ba2f9750d681e28684ac48194812c9e13ece9-o_d5ab93135d52e3a6a6dedf590dc4b73dfb3da450 a ocedo:ObjectRelation ;
+    ocedo:from ocedr:object-o_d47ba2f9750d681e28684ac48194812c9e13ece9 ;
+    ocedo:object_relation_type "case_object" ;
+    ocedo:to ocedr:event-o_d5ab93135d52e3a6a6dedf590dc4b73dfb3da450 .
+
+ocedr:or-o_d47ba2f9750d681e28684ac48194812c9e13ece9-o_d743f5963efdb5afb2cbbfeeaaabc12740e693e6 a ocedo:ObjectRelation ;
+    ocedo:from ocedr:object-o_d47ba2f9750d681e28684ac48194812c9e13ece9 ;
+    ocedo:object_relation_type "case_object" ;
+    ocedo:to ocedr:event-o_d743f5963efdb5afb2cbbfeeaaabc12740e693e6 .
+
+ocedr:or-o_d47ba2f9750d681e28684ac48194812c9e13ece9-o_dc6765ac988f54774bc76ccc23db0e72c0929b2f a ocedo:ObjectRelation ;
+    ocedo:from ocedr:object-o_d47ba2f9750d681e28684ac48194812c9e13ece9 ;
+    ocedo:object_relation_type "case_object" ;
+    ocedo:to ocedr:event-o_dc6765ac988f54774bc76ccc23db0e72c0929b2f .
+
+ocedr:or-o_d47ba2f9750d681e28684ac48194812c9e13ece9-o_ddcdce10403ed99b04eb886068c19b49218e3612 a ocedo:ObjectRelation ;
+    ocedo:from ocedr:object-o_d47ba2f9750d681e28684ac48194812c9e13ece9 ;
+    ocedo:object_relation_type "case_object" ;
+    ocedo:to ocedr:event-o_ddcdce10403ed99b04eb886068c19b49218e3612 .
+
+ocedr:or-o_d47ba2f9750d681e28684ac48194812c9e13ece9-o_de085280720866d2e6821ceaa7cda75c9d325deb a ocedo:ObjectRelation ;
+    ocedo:from ocedr:object-o_d47ba2f9750d681e28684ac48194812c9e13ece9 ;
+    ocedo:object_relation_type "case_object" ;
+    ocedo:to ocedr:event-o_de085280720866d2e6821ceaa7cda75c9d325deb .
+
+ocedr:or-o_d47ba2f9750d681e28684ac48194812c9e13ece9-o_e4c577acd501d1d78e7c407b9a89511d44342e49 a ocedo:ObjectRelation ;
+    ocedo:from ocedr:object-o_d47ba2f9750d681e28684ac48194812c9e13ece9 ;
+    ocedo:object_relation_type "case_object" ;
+    ocedo:to ocedr:event-o_e4c577acd501d1d78e7c407b9a89511d44342e49 .
+
+ocedr:or-o_d47ba2f9750d681e28684ac48194812c9e13ece9-o_e53d2b87a4f884e43452694756cfa2b6dc3521a6 a ocedo:ObjectRelation ;
+    ocedo:from ocedr:object-o_d47ba2f9750d681e28684ac48194812c9e13ece9 ;
+    ocedo:object_relation_type "case_object" ;
+    ocedo:to ocedr:event-o_e53d2b87a4f884e43452694756cfa2b6dc3521a6 .
+
+ocedr:or-o_d47ba2f9750d681e28684ac48194812c9e13ece9-o_e7990a2dc18e6091ae7756ae2ce8f4bf4dc4f428 a ocedo:ObjectRelation ;
+    ocedo:from ocedr:object-o_d47ba2f9750d681e28684ac48194812c9e13ece9 ;
+    ocedo:object_relation_type "case_object" ;
+    ocedo:to ocedr:event-o_e7990a2dc18e6091ae7756ae2ce8f4bf4dc4f428 .
+
+ocedr:or-o_d47ba2f9750d681e28684ac48194812c9e13ece9-o_ec8660c3f324d9e3a9688e4a0230aa42905c1538 a ocedo:ObjectRelation ;
+    ocedo:from ocedr:object-o_d47ba2f9750d681e28684ac48194812c9e13ece9 ;
+    ocedo:object_relation_type "case_object" ;
+    ocedo:to ocedr:event-o_ec8660c3f324d9e3a9688e4a0230aa42905c1538 .
+
+ocedr:or-o_d47ba2f9750d681e28684ac48194812c9e13ece9-o_ed3ff4f205907a14333ac903d2f715f51c924c6d a ocedo:ObjectRelation ;
+    ocedo:from ocedr:object-o_d47ba2f9750d681e28684ac48194812c9e13ece9 ;
+    ocedo:object_relation_type "case_object" ;
+    ocedo:to ocedr:event-o_ed3ff4f205907a14333ac903d2f715f51c924c6d .
+
+ocedr:or-o_d47ba2f9750d681e28684ac48194812c9e13ece9-o_f2016cf5f96b631f1bb2b2e5f7e27b4d9ffb566c a ocedo:ObjectRelation ;
+    ocedo:from ocedr:object-o_d47ba2f9750d681e28684ac48194812c9e13ece9 ;
+    ocedo:object_relation_type "case_object" ;
+    ocedo:to ocedr:event-o_f2016cf5f96b631f1bb2b2e5f7e27b4d9ffb566c .
+
+ocedr:or-o_d47ba2f9750d681e28684ac48194812c9e13ece9-o_f8865985faf3e52d8b8b173c78d7a1fa75a883c6 a ocedo:ObjectRelation ;
+    ocedo:from ocedr:object-o_d47ba2f9750d681e28684ac48194812c9e13ece9 ;
+    ocedo:object_relation_type "case_object" ;
+    ocedo:to ocedr:event-o_f8865985faf3e52d8b8b173c78d7a1fa75a883c6 .
+
+ocedr:or-o_d47ba2f9750d681e28684ac48194812c9e13ece9-o_fb896afc53acf720ac5844668d249bb3ee604f18 a ocedo:ObjectRelation ;
+    ocedo:from ocedr:object-o_d47ba2f9750d681e28684ac48194812c9e13ece9 ;
+    ocedo:object_relation_type "case_object" ;
+    ocedo:to ocedr:event-o_fb896afc53acf720ac5844668d249bb3ee604f18 .
+
+ocedr:or-o_d47ba2f9750d681e28684ac48194812c9e13ece9-o_fd28f31ba8c34c426120cc163b254e38d9e5240d a ocedo:ObjectRelation ;
+    ocedo:from ocedr:object-o_d47ba2f9750d681e28684ac48194812c9e13ece9 ;
+    ocedo:object_relation_type "case_object" ;
+    ocedo:to ocedr:event-o_fd28f31ba8c34c426120cc163b254e38d9e5240d .
+
+<https://w3id.org/semsys/ns/ocedo/core> a owl:Ontology ;
+    dcterms:contributor "Claudio di Ciccio",
+        "Maxim Vidgof",
+        "Sabrina Kirrane" ;
+    dcterms:created "2024-08-20" ;
+    dcterms:creator "Fajar J. Ekaputra",
+        "Saba Latif" ;
+    dcterms:description "An ontology to describe Object-Centric Event Data (OCED) for Process Mining"@en ;
+    dcterms:license <https://creativecommons.org/licenses/by/4.0> ;
+    dcterms:modified "2024-08-20" ;
+    dcterms:title "The OCED Ontology"@en ;
+    vann:preferredNamespacePrefix "ocedo" ;
+    vann:preferredNamespaceUri "https://w3id.org/semsys/ns/ocedo/core#" ;
+    owl:imports <http://purl.org/net/p-plan#>,
+        <http://www.opmw.org/ontology/> .
+
 ocedr:oa-concept%3Aname-1-364285768 ocedo:object_attribute_name "concept:name" ;
     ocedo:object_attribute_value "1-364285768" .
 
@@ -3071,6 +3698,10 @@ ocedr:object-o_aba3ce8fba7fd97297bc546e1d0ae4e64b1e2df7 a ocedo:Object,
     ocedo:object_type "org:resource" ;
     ocedd:located_in ocedr:object-o_c43c773f5c7fbed1b20ec97d539d9d0735f0a34c ;
     ocedd:part_of ocedr:object-o_21de5a708321cc73a31689d19045efb5be002c45 .
+
+ocedo:ObjectAttribute a owl:Class ;
+    rdfs:label "ObjectAttribute" ;
+    rdfs:comment "representation of the object attribute class/concept" .
 
 ocedr:ea-lifecycle_transition-Resolved a ocedo:EventAttribute ;
     ocedo:event_attribute_name "lifecycle_transition" ;
@@ -3940,10 +4571,6 @@ ocedr:object-o_ef20db483a4a2621181cac2fb2d74f596029e11e a ocedo:Object,
     ocedo:object_attribute ocedr:oa-org%3Arole-A2_4 ;
     ocedo:object_type "org:role" .
 
-ocedo:EventAttribute a owl:Class ;
-    rdfs:label "EventAttribute" ;
-    rdfs:comment "representation of the event attribute class/concept" .
-
 ocedr:object-o_7a4dc15206f5f03fd33d2f1709f77ec069bc6161 a ocedo:Object,
         ocedd:SupportTeam ;
     ocedo:object_attribute ocedr:oa-org%3Agroup-M25 ;
@@ -3962,6 +4589,10 @@ ocedr:object-o_dc6765ac988f54774bc76ccc23db0e72c0929b2f a ocedo:Object,
     ocedo:object_type "org:group" ;
     ocedd:part_of ocedr:object-o_76cf7262aa1d169d8908792eebe77e0d9ad2093f .
 
+ocedo:EventAttribute a owl:Class ;
+    rdfs:label "EventAttribute" ;
+    rdfs:comment "representation of the event attribute class/concept" .
+
 ocedr:object-o_62986eb1d091549a280a405a62760dcf79d65fcc a ocedo:Object,
         ocedd:TeamMember ;
     ocedo:object_attribute ocedr:oa-org%3Aresource-Jon ;
@@ -3978,10 +4609,6 @@ ocedr:object-o_80d659b9d0fcb2235486305f3dc62cd0c47d2a0e a ocedo:Object,
     ocedd:part_of ocedr:object-o_7e62c44d2a8563cff0468bbb886ba10f1137b025,
         ocedr:object-o_8b2cbc03e38a6cf628353844d708cd56f5ce8625,
         ocedr:object-o_ab7238b0f1c328cbd9f25cebe11d50cb7db53fe1 .
-
-ocedr:object-o_2fcac6a4e80c374451c77954fb4f150ad177d359 a ocedo:Object ;
-    ocedo:object_attribute ocedr:oa-concept%3Aname-1-364285768 ;
-    ocedo:object_type "case" .
 
 ocedr:object-o_98e770e6c9781521962a944ebe01e193212f61fc a ocedo:Object,
         ocedd:Location ;
@@ -4036,10 +4663,6 @@ ocedr:object-o_6e34280e1ff2418c818bf65a4bce83b83750d11d a ocedo:Object,
     ocedo:object_type "organization involved" ;
     ocedd:located_in ocedr:object-o_98e770e6c9781521962a944ebe01e193212f61fc .
 
-ocedr:object-o_d47ba2f9750d681e28684ac48194812c9e13ece9 a ocedo:Object ;
-    ocedo:object_attribute ocedr:oa-concept%3Aname-1-467153946 ;
-    ocedo:object_type "case" .
-
 ocedr:object-o_c31a24c740e4ffb57fcb4537d38bd67f82c4effd a ocedo:Object,
         ocedd:Location ;
     ocedo:object_attribute ocedr:oa-organization%20country-se ;
@@ -4063,6 +4686,10 @@ ocedr:object-o_c43c773f5c7fbed1b20ec97d539d9d0735f0a34c a ocedo:Object,
     ocedo:object_attribute ocedr:oa-resource%20country-Sweden ;
     ocedo:object_type "resource country" .
 
+ocedr:object-o_2fcac6a4e80c374451c77954fb4f150ad177d359 a ocedo:Object ;
+    ocedo:object_attribute ocedr:oa-concept%3Aname-1-364285768 ;
+    ocedo:object_type "case" .
+
 ocedr:object-o_c91b5b936dd24a83d8ff505130af76398b6ea4ff a ocedo:Object .
 
 ocedo:Event a owl:Class ;
@@ -4084,6 +4711,14 @@ ocedr:object-o_ba1c868c77440442560645cbce09ddd40784a23f a ocedo:Object,
         ocedd:Impact ;
     ocedo:object_attribute ocedr:oa-impact-Medium ;
     ocedo:object_type "impact" .
+
+ocedr:object-o_d47ba2f9750d681e28684ac48194812c9e13ece9 a ocedo:Object ;
+    ocedo:object_attribute ocedr:oa-concept%3Aname-1-467153946 ;
+    ocedo:object_type "case" .
+
+ocedo:ObjectRelation a owl:Class ;
+    rdfs:label "ObjectRelation" ;
+    rdfs:comment "representation of the relation between two Objects" .
 
 ocedo:EventObject a owl:Class ;
     rdfs:label "EventObject" ;
