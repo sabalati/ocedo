@@ -99,4 +99,21 @@ ocedo:eo_object a owl:ObjectProperty ;
     rdfs:range ocedo:Event ;
     rdfs:comment "relation between EventObject and relevant Object" .
 
+# ObjectRelation
+ocedo:ObjectRelation a owl:Class ;
+    rdfs:label "ObjectRelation" ;
+    rdfs:comment "representation of the relation between two Objects" .
+
+ocedo:from a owl:ObjectProperty ;
+    rdfs:label "from" ;
+    rdfs:domain ocedo:ObjectRelation ;
+    rdfs:range ocedo:Object ;
+    rdfs:comment "source Object" .
+
+ocedo:to a owl:ObjectProperty ;
+    rdfs:label "to" ;
+    rdfs:domain ocedo:ObjectRelation ;
+    rdfs:range ocedo:Object ;
+    rdfs:comment "target Object" .
+
 ## end of ontology
