@@ -5,7 +5,22 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 
-# *** OCED Metamodel *** 
+# *** OCED Ontology *** 
+<https://w3id.org/semsys/ns/ocedo/core> rdf:type owl:Ontology ;
+                                     owl:imports <http://purl.org/net/p-plan#> ,
+                                                 <http://www.opmw.org/ontology/> ;
+                                     <http://purl.org/dc/terms/contributor> "Sabrina Kirrane" ,
+                                                                            "Claudio di Ciccio" ,
+                                                                            "Maxim Vidgof" ;
+                                     <http://purl.org/dc/terms/created> "2024-08-20" ;
+                                     <http://purl.org/dc/terms/creator> "Saba Latif" ,
+                                                                        "Fajar J. Ekaputra" ;
+                                     <http://purl.org/dc/terms/description> "An ontology to describe Object-Centric Event Data (OCED) for Process Mining"@en ;
+                                     <http://purl.org/dc/terms/license> <https://creativecommons.org/licenses/by/4.0> ;
+                                     <http://purl.org/dc/terms/modified> "2024-08-20" ;
+                                     <http://purl.org/dc/terms/title> "The OCED Ontology"@en ;
+                                     <http://purl.org/vocab/vann/preferredNamespacePrefix> "ocedo" ;
+                                     <http://purl.org/vocab/vann/preferredNamespaceUri> "https://w3id.org/semsys/ns/ocedo/core#" .
 
 # Event representation in OCED
 ocedo:Event a owl:Class ;
@@ -27,7 +42,7 @@ ocedo:event_type a owl:DatatypeProperty ;
 ocedo:event_attribute a owl:ObjectProperty ;
     rdfs:label "event_attribute" ;
     rdfs:domain ocedo:Event ;
-    rdfs:domain ocedo:EventAttribute ;
+    rdfs:range ocedo:EventAttribute ;
     rdfs:comment "link between Event and EventAttribute" .
 
 # Event Attribute representation in OCED
@@ -37,12 +52,14 @@ ocedo:EventAttribute a owl:Class ;
 
 ocedo:event_attribute_name a owl:DatatypeProperty ;
     rdfs:label "event_attribute_name" ;
-    rdfs:domain ocedo:attributes ;
+    rdfs:domain ocedo:EventAttribute ;
+    rdfs:range xsd:string ;
     rdfs:comment "Stores information about event attribute name" .
 
 ocedo:event_attribute_value a owl:DatatypeProperty ;
     rdfs:label "eventt_attribute_value" ;
-    rdfs:domain ocedo:attributes ;
+    rdfs:domain ocedo:EventAttribute ;
+    rdfs:range xsd:string ;
     rdfs:comment "Stores information about event attribute values" .
 
 # Object representation in OCED
@@ -59,7 +76,7 @@ ocedo:object_type a owl:DatatypeProperty ;
 ocedo:object_attribute a owl:ObjectProperty ;
     rdfs:label "event_attribute" ;
     rdfs:domain ocedo:Object ;
-    rdfs:domain ocedo:Attribute ;
+    rdfs:range ocedo:ObjectAttribute ;
     rdfs:comment "link between Event and EventAttribute" .
 
 # Object Attribute representation in OCED
@@ -69,12 +86,14 @@ ocedo:ObjectAttribute a owl:Class ;
 
 ocedo:object_attribute_name a owl:DatatypeProperty ;
     rdfs:label "event_attribute_name" ;
-    rdfs:domain ocedo:attributes ;
+    rdfs:domain ocedo:ObjectAttribute ;
+    rdfs:range xsd:string ;
     rdfs:comment "Stores information about event attribute name" .
 
 ocedo:object_attribute_value a owl:DatatypeProperty ;
     rdfs:label "eventt_attribute_value" ;
-    rdfs:domain ocedo:attributes ;
+    rdfs:domain ocedo:ObjectAttribute ;
+    rdfs:range xsd:string ;
     rdfs:comment "Stores information about event attribute values" .
 
 # EventObject
@@ -84,7 +103,8 @@ ocedo:EventObject a owl:Class ;
 
 ocedo:classifier a owl:DatatypeProperty ;
     rdfs:label "classifier" ;
-    rdfs:domain ocedo:attributes ;
+    rdfs:domain ocedo:EventObject ;
+    rdfs:range xsd:string ;
     rdfs:comment "EventObject classifier" .
 
 ocedo:eo_event a owl:ObjectProperty ;
@@ -96,13 +116,19 @@ ocedo:eo_event a owl:ObjectProperty ;
 ocedo:eo_object a owl:ObjectProperty ;
     rdfs:label "EventObject_object" ;
     rdfs:domain ocedo:EventObject ;
-    rdfs:range ocedo:Event ;
+    rdfs:range ocedo:Object ;
     rdfs:comment "relation between EventObject and relevant Object" .
 
 # ObjectRelation
 ocedo:ObjectRelation a owl:Class ;
     rdfs:label "ObjectRelation" ;
     rdfs:comment "representation of the relation between two Objects" .
+
+ocedo:object_relation_type a owl:DatatypeProperty ;
+    rdfs:label "object_relation_type" ;
+    rdfs:domain ocedo:ObjectRelation ;
+    rdfs:range xsd:string ;
+    rdfs:comment "shows type of an ObjectRelation" .
 
 ocedo:from a owl:ObjectProperty ;
     rdfs:label "from" ;

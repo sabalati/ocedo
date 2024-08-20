@@ -218,3 +218,49 @@ map:event_object rdf:type rr:TriplesMap ;
             rr:termType rr:IRI ;
         ] ;
     ] .
+
+
+
+## Object-Object Relation Mapping (FJE-OK)
+map:object_relation rdf:type rr:TriplesMap ;
+    rdfs:label "object_object" ;
+    rml:logicalSource [
+            rml:iterator "$.object_object[*]" ;
+            rml:referenceFormulation ql:JSONPath ;
+            rdf:type rml:LogicalSource 
+        ] ;
+    
+    rr:subjectMap [
+        rr:template "https://w3id.org/ocedo/resource/or-{from}-{to}" 
+    ] ;
+
+    rr:predicateObjectMap [
+        rr:predicate rdf:type ;
+        rr:objectMap [
+			rr:constant ocedo:ObjectRelation ;
+        ] ;
+    ] ;
+
+	rr:predicateObjectMap [
+		rr:predicate ocedo:object_relation_type ;
+		rr:objectMap [
+			rml:reference "object_relation_type" ;
+			rr:datatype xsd:string ;
+		] ;
+	] ;
+
+    rr:predicateObjectMap [
+        rr:predicate ocedo:from ;
+        rr:objectMap [
+			rr:template "https://w3id.org/ocedo/resource/object-{from}" ;
+            rr:termType rr:IRI ;
+        ] ;
+    ] ;
+
+    rr:predicateObjectMap [
+        rr:predicate ocedo:to ;
+        rr:objectMap [
+			rr:template "https://w3id.org/ocedo/resource/event-{to}" ;
+            rr:termType rr:IRI ;
+        ] ;
+    ] .
