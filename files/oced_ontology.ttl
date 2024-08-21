@@ -7,8 +7,6 @@
 
 # *** OCED Ontology *** 
 <https://w3id.org/semsys/ns/ocedo/core> rdf:type owl:Ontology ;
-                                     owl:imports <http://purl.org/net/p-plan#> ,
-                                                 <http://www.opmw.org/ontology/> ;
                                      <http://purl.org/dc/terms/contributor> "Sabrina Kirrane" ,
                                                                             "Claudio di Ciccio" ,
                                                                             "Maxim Vidgof" ;
