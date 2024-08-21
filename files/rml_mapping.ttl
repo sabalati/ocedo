@@ -159,14 +159,17 @@ map:object_attribute rdf:type rr:TriplesMap ;
 	] ;
 
 	rr:predicateObjectMap [
+		rr:predicate rdf:type ;
+		rr:objectMap [
+			rr:constant ocedo:ObjectAttribute ;
+		] ;
+	] , [
 		rr:predicate ocedo:object_attribute_name ;
 		rr:objectMap [
 			rml:reference "object_attribute_name" ;
 			rr:datatype xsd:string ;
 		] ;
-	] ;
-
-	rr:predicateObjectMap [
+	] , [
 		rr:predicate ocedo:object_attribute_value ;
 		rr:objectMap [
 			rml:reference "object_attribute_value" ;

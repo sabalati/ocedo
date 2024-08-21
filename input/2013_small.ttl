@@ -3442,139 +3442,184 @@ ocedr:or-o_d47ba2f9750d681e28684ac48194812c9e13ece9-o_fd28f31ba8c34c426120cc163b
     ocedo:object_relation_type "case_object" ;
     ocedo:to ocedr:event-o_fd28f31ba8c34c426120cc163b254e38d9e5240d .
 
-ocedr:oa-concept%3Aname-1-364285768 ocedo:object_attribute_name "concept:name" ;
+ocedr:oa-concept%3Aname-1-364285768 a ocedo:ObjectAttribute ;
+    ocedo:object_attribute_name "concept:name" ;
     ocedo:object_attribute_value "1-364285768" .
 
-ocedr:oa-concept%3Aname-1-467153946 ocedo:object_attribute_name "concept:name" ;
+ocedr:oa-concept%3Aname-1-467153946 a ocedo:ObjectAttribute ;
+    ocedo:object_attribute_name "concept:name" ;
     ocedo:object_attribute_value "1-467153946" .
 
-ocedr:oa-impact-Medium ocedo:object_attribute_name "impact" ;
+ocedr:oa-impact-Medium a ocedo:ObjectAttribute ;
+    ocedo:object_attribute_name "impact" ;
     ocedo:object_attribute_value "Medium" .
 
-ocedr:oa-org%3Agroup-G137%202nd ocedo:object_attribute_name "org:group" ;
+ocedr:oa-org%3Agroup-G137%202nd a ocedo:ObjectAttribute ;
+    ocedo:object_attribute_name "org:group" ;
     ocedo:object_attribute_value "G137 2nd" .
 
-ocedr:oa-org%3Agroup-G140%202nd ocedo:object_attribute_name "org:group" ;
+ocedr:oa-org%3Agroup-G140%202nd a ocedo:ObjectAttribute ;
+    ocedo:object_attribute_name "org:group" ;
     ocedo:object_attribute_value "G140 2nd" .
 
-ocedr:oa-org%3Agroup-G142%202nd ocedo:object_attribute_name "org:group" ;
+ocedr:oa-org%3Agroup-G142%202nd a ocedo:ObjectAttribute ;
+    ocedo:object_attribute_name "org:group" ;
     ocedo:object_attribute_value "G142 2nd" .
 
-ocedr:oa-org%3Agroup-M25 ocedo:object_attribute_name "org:group" ;
+ocedr:oa-org%3Agroup-M25 a ocedo:ObjectAttribute ;
+    ocedo:object_attribute_name "org:group" ;
     ocedo:object_attribute_value "M25" .
 
-ocedr:oa-org%3Agroup-N52%202nd ocedo:object_attribute_name "org:group" ;
+ocedr:oa-org%3Agroup-N52%202nd a ocedo:ObjectAttribute ;
+    ocedo:object_attribute_name "org:group" ;
     ocedo:object_attribute_value "N52 2nd" .
 
-ocedr:oa-org%3Agroup-O3%203rd ocedo:object_attribute_name "org:group" ;
+ocedr:oa-org%3Agroup-O3%203rd a ocedo:ObjectAttribute ;
+    ocedo:object_attribute_name "org:group" ;
     ocedo:object_attribute_value "O3 3rd" .
 
-ocedr:oa-org%3Agroup-S42 ocedo:object_attribute_name "org:group" ;
+ocedr:oa-org%3Agroup-S42 a ocedo:ObjectAttribute ;
+    ocedo:object_attribute_name "org:group" ;
     ocedo:object_attribute_value "S42" .
 
-ocedr:oa-org%3Agroup-V13%202nd%203rd ocedo:object_attribute_name "org:group" ;
+ocedr:oa-org%3Agroup-V13%202nd%203rd a ocedo:ObjectAttribute ;
+    ocedo:object_attribute_name "org:group" ;
     ocedo:object_attribute_value "V13 2nd 3rd" .
 
-ocedr:oa-org%3Agroup-V30 ocedo:object_attribute_name "org:group" ;
+ocedr:oa-org%3Agroup-V30 a ocedo:ObjectAttribute ;
+    ocedo:object_attribute_name "org:group" ;
     ocedo:object_attribute_value "V30" .
 
-ocedr:oa-org%3Agroup-V5%203rd ocedo:object_attribute_name "org:group" ;
+ocedr:oa-org%3Agroup-V5%203rd a ocedo:ObjectAttribute ;
+    ocedo:object_attribute_name "org:group" ;
     ocedo:object_attribute_value "V5 3rd" .
 
-ocedr:oa-org%3Aresource-%C3%85se ocedo:object_attribute_name "org:resource" ;
+ocedr:oa-org%3Aresource-%C3%85se a ocedo:ObjectAttribute ;
+    ocedo:object_attribute_name "org:resource" ;
     ocedo:object_attribute_value "Åse" .
 
-ocedr:oa-org%3Aresource-Adam ocedo:object_attribute_name "org:resource" ;
+ocedr:oa-org%3Aresource-Adam a ocedo:ObjectAttribute ;
+    ocedo:object_attribute_name "org:resource" ;
     ocedo:object_attribute_value "Adam" .
 
-ocedr:oa-org%3Aresource-Andreas ocedo:object_attribute_name "org:resource" ;
+ocedr:oa-org%3Aresource-Andreas a ocedo:ObjectAttribute ;
+    ocedo:object_attribute_name "org:resource" ;
     ocedo:object_attribute_value "Andreas" .
 
-ocedr:oa-org%3Aresource-Anne%20Claire ocedo:object_attribute_name "org:resource" ;
+ocedr:oa-org%3Aresource-Anne%20Claire a ocedo:ObjectAttribute ;
+    ocedo:object_attribute_name "org:resource" ;
     ocedo:object_attribute_value "Anne Claire" .
 
-ocedr:oa-org%3Aresource-Bj%C3%B6rn%20T ocedo:object_attribute_name "org:resource" ;
+ocedr:oa-org%3Aresource-Bj%C3%B6rn%20T a ocedo:ObjectAttribute ;
+    ocedo:object_attribute_name "org:resource" ;
     ocedo:object_attribute_value "Björn T" .
 
-ocedr:oa-org%3Aresource-Denny ocedo:object_attribute_name "org:resource" ;
+ocedr:oa-org%3Aresource-Denny a ocedo:ObjectAttribute ;
+    ocedo:object_attribute_name "org:resource" ;
     ocedo:object_attribute_value "Denny" .
 
-ocedr:oa-org%3Aresource-Eric ocedo:object_attribute_name "org:resource" ;
+ocedr:oa-org%3Aresource-Eric a ocedo:ObjectAttribute ;
+    ocedo:object_attribute_name "org:resource" ;
     ocedo:object_attribute_value "Eric" .
 
-ocedr:oa-org%3Aresource-Frederic ocedo:object_attribute_name "org:resource" ;
+ocedr:oa-org%3Aresource-Frederic a ocedo:ObjectAttribute ;
+    ocedo:object_attribute_name "org:resource" ;
     ocedo:object_attribute_value "Frederic" .
 
-ocedr:oa-org%3Aresource-Gustav ocedo:object_attribute_name "org:resource" ;
+ocedr:oa-org%3Aresource-Gustav a ocedo:ObjectAttribute ;
+    ocedo:object_attribute_name "org:resource" ;
     ocedo:object_attribute_value "Gustav" .
 
-ocedr:oa-org%3Aresource-Jon ocedo:object_attribute_name "org:resource" ;
+ocedr:oa-org%3Aresource-Jon a ocedo:ObjectAttribute ;
+    ocedo:object_attribute_name "org:resource" ;
     ocedo:object_attribute_value "Jon" .
 
-ocedr:oa-org%3Aresource-Joseph ocedo:object_attribute_name "org:resource" ;
+ocedr:oa-org%3Aresource-Joseph a ocedo:ObjectAttribute ;
+    ocedo:object_attribute_name "org:resource" ;
     ocedo:object_attribute_value "Joseph" .
 
-ocedr:oa-org%3Aresource-Loic ocedo:object_attribute_name "org:resource" ;
+ocedr:oa-org%3Aresource-Loic a ocedo:ObjectAttribute ;
+    ocedo:object_attribute_name "org:resource" ;
     ocedo:object_attribute_value "Loic" .
 
-ocedr:oa-org%3Aresource-Magnus ocedo:object_attribute_name "org:resource" ;
+ocedr:oa-org%3Aresource-Magnus a ocedo:ObjectAttribute ;
+    ocedo:object_attribute_name "org:resource" ;
     ocedo:object_attribute_value "Magnus" .
 
-ocedr:oa-org%3Aresource-Paul ocedo:object_attribute_name "org:resource" ;
+ocedr:oa-org%3Aresource-Paul a ocedo:ObjectAttribute ;
+    ocedo:object_attribute_name "org:resource" ;
     ocedo:object_attribute_value "Paul" .
 
-ocedr:oa-org%3Aresource-Sarah ocedo:object_attribute_name "org:resource" ;
+ocedr:oa-org%3Aresource-Sarah a ocedo:ObjectAttribute ;
+    ocedo:object_attribute_name "org:resource" ;
     ocedo:object_attribute_value "Sarah" .
 
-ocedr:oa-org%3Aresource-Siebel ocedo:object_attribute_name "org:resource" ;
+ocedr:oa-org%3Aresource-Siebel a ocedo:ObjectAttribute ;
+    ocedo:object_attribute_name "org:resource" ;
     ocedo:object_attribute_value "Siebel" .
 
-ocedr:oa-org%3Aresource-Suliman ocedo:object_attribute_name "org:resource" ;
+ocedr:oa-org%3Aresource-Suliman a ocedo:ObjectAttribute ;
+    ocedo:object_attribute_name "org:resource" ;
     ocedo:object_attribute_value "Suliman" .
 
-ocedr:oa-org%3Aresource-Torbj%C3%B6rn ocedo:object_attribute_name "org:resource" ;
+ocedr:oa-org%3Aresource-Torbj%C3%B6rn a ocedo:ObjectAttribute ;
+    ocedo:object_attribute_name "org:resource" ;
     ocedo:object_attribute_value "Torbjörn" .
 
-ocedr:oa-org%3Arole-A2_4 ocedo:object_attribute_name "org:role" ;
+ocedr:oa-org%3Arole-A2_4 a ocedo:ObjectAttribute ;
+    ocedo:object_attribute_name "org:role" ;
     ocedo:object_attribute_value "A2_4" .
 
-ocedr:oa-org%3Arole-A2_5 ocedo:object_attribute_name "org:role" ;
+ocedr:oa-org%3Arole-A2_5 a ocedo:ObjectAttribute ;
+    ocedo:object_attribute_name "org:role" ;
     ocedo:object_attribute_value "A2_5" .
 
-ocedr:oa-org%3Arole-C_6 ocedo:object_attribute_name "org:role" ;
+ocedr:oa-org%3Arole-C_6 a ocedo:ObjectAttribute ;
+    ocedo:object_attribute_name "org:role" ;
     ocedo:object_attribute_value "C_6" .
 
-ocedr:oa-org%3Arole-E_10 ocedo:object_attribute_name "org:role" ;
+ocedr:oa-org%3Arole-E_10 a ocedo:ObjectAttribute ;
+    ocedo:object_attribute_name "org:role" ;
     ocedo:object_attribute_value "E_10" .
 
-ocedr:oa-org%3Arole-V3_2 ocedo:object_attribute_name "org:role" ;
+ocedr:oa-org%3Arole-V3_2 a ocedo:ObjectAttribute ;
+    ocedo:object_attribute_name "org:role" ;
     ocedo:object_attribute_value "V3_2" .
 
-ocedr:oa-organization%20country-fr ocedo:object_attribute_name "organization country" ;
+ocedr:oa-organization%20country-fr a ocedo:ObjectAttribute ;
+    ocedo:object_attribute_name "organization country" ;
     ocedo:object_attribute_value "fr" .
 
-ocedr:oa-organization%20country-se ocedo:object_attribute_name "organization country" ;
+ocedr:oa-organization%20country-se a ocedo:ObjectAttribute ;
+    ocedo:object_attribute_name "organization country" ;
     ocedo:object_attribute_value "se" .
 
-ocedr:oa-organization%20involved-Org%20line%20A2 ocedo:object_attribute_name "organization involved" ;
+ocedr:oa-organization%20involved-Org%20line%20A2 a ocedo:ObjectAttribute ;
+    ocedo:object_attribute_name "organization involved" ;
     ocedo:object_attribute_value "Org line A2" .
 
-ocedr:oa-organization%20involved-Org%20line%20C ocedo:object_attribute_name "organization involved" ;
+ocedr:oa-organization%20involved-Org%20line%20C a ocedo:ObjectAttribute ;
+    ocedo:object_attribute_name "organization involved" ;
     ocedo:object_attribute_value "Org line C" .
 
-ocedr:oa-product-PROD453 ocedo:object_attribute_name "product" ;
+ocedr:oa-product-PROD453 a ocedo:ObjectAttribute ;
+    ocedo:object_attribute_name "product" ;
     ocedo:object_attribute_value "PROD453" .
 
-ocedr:oa-product-PROD582 ocedo:object_attribute_name "product" ;
+ocedr:oa-product-PROD582 a ocedo:ObjectAttribute ;
+    ocedo:object_attribute_name "product" ;
     ocedo:object_attribute_value "PROD582" .
 
-ocedr:oa-resource%20country-0 ocedo:object_attribute_name "resource country" ;
+ocedr:oa-resource%20country-0 a ocedo:ObjectAttribute ;
+    ocedo:object_attribute_name "resource country" ;
     ocedo:object_attribute_value "0" .
 
-ocedr:oa-resource%20country-France ocedo:object_attribute_name "resource country" ;
+ocedr:oa-resource%20country-France a ocedo:ObjectAttribute ;
+    ocedo:object_attribute_name "resource country" ;
     ocedo:object_attribute_value "France" .
 
-ocedr:oa-resource%20country-Sweden ocedo:object_attribute_name "resource country" ;
+ocedr:oa-resource%20country-Sweden a ocedo:ObjectAttribute ;
+    ocedo:object_attribute_name "resource country" ;
     ocedo:object_attribute_value "Sweden" .
 
 ocedr:object-o_aba3ce8fba7fd97297bc546e1d0ae4e64b1e2df7 a ocedo:Object ;
