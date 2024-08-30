@@ -24,6 +24,3 @@ Cleaning up source code into readable documentation as Git code.
     * for EVENT-OBJECT relations, an accompanying csv file (`files/2013_event-object_mapping.csv`), providing the information about "object_type,ocedd_class,ocedd_relation" is needed. it will add new relations based on the EVENT-OBJECT instances. 
     * for OBJECT-OBJECT relations, an accompanying csv file (`files/2013_object-object_mapping.csv`), providing the information about "object1_class,object2_class,object1_type,object2_type,ocedd_relation" is needed. it will add new relations based on the OBJECT-OBJECT instances. 
     * The enhanced TTL result (integrating also the ontology and the original TTL file) is stored as `input/2013_small-integrated.ttl` and ready to be given to the users :).
-
-
-Test
