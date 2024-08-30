@@ -26,5 +26,4 @@ Cleaning up source code into readable documentation as Git code.
     * The enhanced TTL result (integrating also the ontology and the original TTL file) is stored as `input/2013_small-integrated.ttl` and ready to be given to the users :).
 
 
-
-
+Test
