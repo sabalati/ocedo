@@ -3,7 +3,12 @@
 Cleaning up source code into readable documentation as Git code.
 
 ## Changelog
+0. You can download the necessary input files for this project from the following link:
+- [Download Input Folder from Google Drive](https://drive.google.com/file/d/1aSv3yu4m41ddsRCoydE9GPC0BLF-JcBI/view?usp=drive_link)
+- [Download Files Folder from Google Drive](https://drive.google.com/file/d/1OQYV-0GGUZq_41XSAjTflg_EwEnYUSiu/view?usp=drive_link)
 
+Download Input from Google Drive
+Download Files from Google Drive
 1. Renaming existing ipynb scripts
     * `XES to JSON v4.1 Maxim.ipynb` ==> `1_xes_to_json.ipynb` (no changes)
     * `rml.ipynb` ==> `2_json_to_ttl.ipynb` (some modification and splits)
